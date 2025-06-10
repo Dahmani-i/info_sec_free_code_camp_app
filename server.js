@@ -5,7 +5,7 @@
 
 var express = require("express");
 var app = express();
-app.enable("x-powered-by");
+app.disable("x-powered-by");
 var fs = require("fs");
 var path = require("path");
 
