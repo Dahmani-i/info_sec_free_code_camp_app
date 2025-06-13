@@ -5,7 +5,7 @@ const app = express();
 
 
 const helmet = require('helmet');
-app.use(helmet.hidePoweredBy());
+/*app.use(helmet.hidePoweredBy());
 app.use(helmet.frameguard({ action: 'deny' }));
 app.use(helmet.xssFilter());
 app.use(helmet.noSniff());
@@ -26,7 +26,22 @@ app.use(helmet.contentSecurityPolicy({
 }
 )
 );//CSP works by defining an allowed list of content sources which are trusted.
+*/
 
+// !!!!!! NB : all the commented staff up are for learning perpesees so ,it is not practical ,it all can be replaced by the litle code down this comment
+
+// it start hier
+app.use(helmet({
+
+  contentSecurityPolicy: {    // enable and configure
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'style.com'],
+    }
+  },
+  noCache: true
+
+}));//it end hier
 
 
 
