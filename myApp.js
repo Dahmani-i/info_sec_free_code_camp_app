@@ -18,6 +18,15 @@ app.use(helmet.dnsPrefetchControl());
 
 app.use(helmet.noCache()); //cache is not good for app updates
 
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", 'trusted-cdn.com']
+  }
+}
+)
+);//CSP works by defining an allowed list of content sources which are trusted.
+
 
 
 
