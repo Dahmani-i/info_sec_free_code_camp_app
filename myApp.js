@@ -14,8 +14,9 @@ app.use(helmet.ieNoOpen());
 const timeInSeconds = 90 * 24 * 60 * 60;
 app.use(helmet.hsts({ maxAge: timeInSeconds, force: true }));//it protect against man i the midle attaque
 
+app.use(helmet.dnsPrefetchControl());
 
-
+app.use(helmet.noCache()); //cache is not good for app updates
 
 
 
