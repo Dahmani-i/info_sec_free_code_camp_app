@@ -28,7 +28,7 @@ app.use(helmet.contentSecurityPolicy({
 );//CSP works by defining an allowed list of content sources which are trusted.
 */
 
-// !!!!!! NB : all the commented staff up are for learning perpesees so ,it is not practical ,it all can be replaced by the litle code down this comment
+// !!!!!! Note : all the commented staff up are for learning perpesees so ,it is not practical ,it all can be replaced by the litle code down this comment
 
 // it start hier
 app.use(helmet({
@@ -40,7 +40,7 @@ app.use(helmet({
     }
   },
   noCache: true
-
+//Note: only nocache and csp are the ones that they can't be replaced,this is why you see nocache:true and csp configration
 }));//it end hier
 
 
